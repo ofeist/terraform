@@ -1,6 +1,6 @@
 # terraform
 
-Installation\
+Installation
 
 - installation
 
