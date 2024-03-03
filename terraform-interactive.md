@@ -114,6 +114,8 @@ $ terraform ...
 
 
 
+- mutable vs immutable inf
+---
 
 
 
