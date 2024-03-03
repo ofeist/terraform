@@ -74,5 +74,3 @@ $ terraform output
 
 - used to provide outputs for eg ansible, shell scripts ..
 
-
-
