@@ -58,4 +58,21 @@ $ terraform init
 
 - explicit dependencies
 ---
+- depends_on = [ local_file.krill ]
+
+
+
+- output variables
+---
+output var-name {
+    value = resource-type.resource-name.id
+    description = "describe the output var name"
+}
+
+$ terraform output
+    - prints output vars
+
+- used to provide outputs for eg ansible, shell scripts ..
+
+
 
