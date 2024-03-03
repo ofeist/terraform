@@ -5,6 +5,8 @@ terraform
     - local_file (resource)
 
 
+1] terraform basics
+
 
 terraform providers
 ---
@@ -73,4 +75,45 @@ $ terraform output
     - prints output vars
 
 - used to provide outputs for eg ansible, shell scripts ..
+
+
+
+2] terraform state
+---
+
+- intro
+---
+$ t apply
+    - creates terraform.tfstate
+
+
+
+- purpose of state
+---
+- to detect a change
+- terraform.tfstate 
+    - shall be saved to a central location, e.g
+    - s3
+
+
+
+3] terraform commands
+---
+$ terraform ...
+    - validate
+    - fmt
+    - show -json
+    - providers
+    - output
+    - output variable-name
+    - refresh   # modifies a state file
+    - plan      # runs refresh too
+    - apply     # runs refresh too
+    - graph     # DOT; could be visualized using "graphviz" tool -> "dot" command
+        $ terraform graph | dot -Tsvg > graph.svg
+
+
+
+
+
 
