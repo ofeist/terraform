@@ -54,3 +54,8 @@ $ terraform init
     3] *.auto.tfvars (alphabetic order)
     4] -var or --var-file (command-line flags)
 
+
+
+- explicit dependencies
+---
+
