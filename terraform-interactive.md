@@ -116,6 +116,6 @@ $ terraform ...
 
 - mutable vs immutable inf
 ---
-
-
+- The lifecycle Meta-Argument
+    - https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle
 
