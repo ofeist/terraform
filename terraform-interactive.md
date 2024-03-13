@@ -119,3 +119,13 @@ $ terraform ...
 - The lifecycle Meta-Argument
     - https://developer.hashicorp.com/terraform/language/meta-arguments/lifecycle
 
+
+
+data sources
+---
+data "local_file" "dog" {
+    filename = "/root/dog.txt"
+}
+
+
+
