@@ -121,11 +121,43 @@ $ terraform ...
 
 
 
-data sources
+- data sources
 ---
 data "local_file" "dog" {
     filename = "/root/dog.txt"
 }
 
+
+- count argument
+---
+resource "local file" "pet" {
+    filename = var.filename
+    count = 3
+}
+
+variable "filename" {
+    default = "/roots/pets.txt"
+}
+
+--
+
+resource "local file" "pet" {
+    filename = var.filename[count.index]
+    count = length(var.filename)
+}
+
+variable "filename" {
+    default = "/roots/pets.txt"
+    default = "/roots/dogs.txt"
+}
+
+output "pets" {
+    value = local_file.pet
+}
+
+
+
+- for-each
+---
 
 
