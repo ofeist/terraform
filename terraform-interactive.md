@@ -155,9 +155,55 @@ output "pets" {
     value = local_file.pet
 }
 
+- this creates a list!
 
 
-- for-each
+- for-each argument
 ---
+resource "local file" "pet" {
+    filename = each.value
+    for_each = var.filename
+}
+
+variable "filename" {
+    type=set(string)
+    default = [
+        "/roots/pets.txt",
+        "/roots/dogs.txt"
+    ]
+}
+
+- for_each works only with a
+    - map, or a
+    - set
+
+- to fix, you could:
+- type=set
+    - cannot contain duplicate elements
+- foreach = toset(var.filename)
+
+- this creates a map!
+    - check the output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
