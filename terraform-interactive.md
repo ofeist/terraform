@@ -4,6 +4,9 @@ terraform
     - https://registry.terraform.io/providers/hashicorp/local/latest/docs/resources/file
     - local_file (resource)
 
+- The Study Guide 
+    - https://developer.hashicorp.com/terraform/tutorials/certification/associate-study
+
 
 1] terraform basics
 
