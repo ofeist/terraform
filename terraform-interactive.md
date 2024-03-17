@@ -7,6 +7,10 @@ terraform
 - The Study Guide 
     - https://developer.hashicorp.com/terraform/tutorials/certification/associate-study
 
+- terraform flash cards
+    - https://quizlet.com/quizlette81381405/folders/terraform-associate-exam/sets
+---
+
 
 1] terraform basics
 
