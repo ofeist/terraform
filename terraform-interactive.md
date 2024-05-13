@@ -194,6 +194,19 @@ variable "filename" {
 
 
 
+- aws cli
+---
+--endpoint http://aws:4566
+
+- aws --version
+
+aws iam --endpoint http://aws:4566 list-users
+aws iam --endpoint http://aws:4566 attach-user-policy help
+aws iam --endpoint http://aws:4566 attach-user-policy --user-name mary --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+aws iam --endpoint http://aws:4566 create-group --group=name project-sapphire-developers
+aws iam --endpoint http://aws:4566 add-user-to-group --group-name project-sapphire-developers --user-name jill
+aws iam --endpoint http://aws:4566 attach-group-policy --group-name project-sapphire-developers --policy-arn arn:aws:iam::aws:policy/AmazonEC2FullAccess
+
 
 
 
