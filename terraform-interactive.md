@@ -209,12 +209,82 @@ aws iam --endpoint http://aws:4566 attach-group-policy --group-name project-sapp
 
 
 
+- aws iam with terraform
+---
+resource "aws_iam_user" "admin-user" {
+    name = "lucy"
+    tags = {
+        Description = "Technical Team Leader"
+    }
+}
+
+- terraform plan
+    - expects the region (although iam-resources are globally, and not related to the region)
+    - expects the provider block
+
+provider "aws" {
+    region = "us-west-2"
+    access_key = "SFFSARA.."
+    secret_key = "sfkdha432531..."
+}
+
+- terraform apply
+
+- preferred way: "aws configure"
+    .aws/credentials
+        [default]
+        aws_access_key_id =
+        aws_secret_access_key =
+
+- export AWS_ACCESS_KEY_ID=...
+- export AWS_SECRET_ACCESS_KEY=...
+- export AWS_REGION=...
+
+
+- IAM policies with terraform
+---
 
 
 
+- create s3 bucket
+---
+main.tf
+--
+resource "aws_s3_bucket" "dc_bucket" {
+  bucket = "dc-is-better-than-marvel"
+  
+}
+
+provider.tf
+--
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+      version = "4.15.0"
+    }
+  }
+}
+
+provider "aws" {
+  region                      = var.region
+  s3_use_path_style = true
+  skip_credentials_validation = true
+  skip_requesting_account_id  = true
+
+  endpoints {
+    s3                       = "http://aws:4566"
+  }
+}
 
 
-
+- upload to s3 bitbuckety
+---
+resource "aws_s3_object" "upload" {
+  bucket = "pixar-studios-2020"
+  key    = "woody.jpg"
+  source = "/root/woody.jpg"
+}
 
 
 
